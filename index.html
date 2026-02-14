@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+      <title>Platformer</title>
+   
+   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Geo&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+   
+   <!--This font is tricky as it for some reason wont load when called through js -->
+   
+   <link href="style.css" rel="stylesheet">
+   
+    </head>
+    
+    <body>
+        
+        <p>Loading...                          Or Broken Or just refresh</p>
+        
+        <canvas>
+            
+        </canvas>
+        
+        <p id="pew"></p>
+        
+        <div id="titleScreen">
+            <h1 style="color:white;font-size:250%;">Platformer</h1>
+            <button class="titleScreenButton" type="button" onclick="hidePage(titleScreen, true); startUpWorld();">Play</button>
+            <br>
+            <button class="titleScreenButton" type="button" onclick="hidePage(settings, false)">Settings</button>
+            <br>
+            <button class="titleScreenButton" type="button" onclick="hidePage(credits, false)">Credits</button>
+            
+        </div>
+        
+        <div id="settings" hidden>
+            <h1 class="pageTitle">Settings</h1>
+            
+            <div id="volumeSliderDiv">
+                <input type="range" min="0" max="100" value="100" id="volumeSlider" oninput="slideVolume(volumeSlider)">
+                <p>Volume: 100</p>
+            </div>
+            <button class="exitButton" type="button" onclick="hidePage(settings, true)">Exit</button>
+            
+        </div>
+        
+        <div id="credits" hidden>
+            <h1 class="pageTitle">Credits</h1>
+            <p></p>
+            <p></p>
+            <button class="exitButton" type="button" onclick="hidePage(credits, true)">Exit</button>
+            
+        </div>
+         
+        <script src="worldData.js"></script>
+        <script src="particle.js"></script>
+        <script src="game.js"></script>
+        
+    </body>
+    
+</html>
