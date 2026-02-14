@@ -569,10 +569,6 @@
                 
                 viewport.yv += gravity.y * deltaTime;
                 
-                 //Applies velocity to the viewport's position
-                viewport.x += viewport.xv * deltaTime;
-                viewport.y += viewport.yv * deltaTime;
-
                 if(player.deathState){
                    player.x_velocity = 0;
                    player.y_velocity = 0;
@@ -580,7 +576,9 @@
                    viewport.yv = 0;
                }//if player is dying then keep the player stationary
 
-                
+                 //Applies velocity to the viewport's position
+                viewport.x += viewport.xv * deltaTime;
+                viewport.y += viewport.yv * deltaTime;
                 
                 //Changes the viewport to match the size of the canvas
                 viewport.w = context.canvas.width;
